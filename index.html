@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="index.css">
+  <script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--creating a navigation bar-->
+<nav id="MyNavBar" class="navbar navbar-default">
+<div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="#">Noam Chomsky</a>
+        </div>
+<!--Dropdown bar-->
+  <ul id="myDetails" class="nav navbar-nav">
+  <!--His life events-->
+  <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+         His Life Events
+         <b class="caret"></b>
+      </a>
+      <ul id="subdetails" class="dropdown-menu">
+         <li><a href="EarlyLife">Early life</a></li>
+         <li><a href="LateLife">Late life</a></li>
+      </ul>
+  </li>
+  <!--His publications-->
+  <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Publications
+        <b class="caret"></b>
+      </a>
+      <ul id="subdetails" class="dropdown-menu">
+        <li><a href="Book">Books</a></li>
+        <li><a href="Article">Articles</a></li>
+      </ul>
+  </li>
+  <!--His opinions-->
+  <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+         Opinions
+         <b class="caret"></b>
+      </a>
+      <ul id="subdetails" class="dropdown-menu">
+          <li><a href="AntiSemitism">Anti-Semitism</a></li>
+          <li><a href="freedom">Freedom of Speech</a></li>
+      </ul>
+  </li>   
+  </ul>
+</div>
+</nav>
+
+<div class="background-image"></div> 
+<div class="container-fluid">
+  <div class="row">
+     <div class="col-xs-8">
+      <h1 id="mainTitle" class="text-primary text-center">Prof. Avram Noam Chomsky</h1>
+      </div>
+      <!--Image-->
+      <div class="col-xs-4">
+       <a href="#"><img class="img-responsive thick-image-border" src="http://www.frontline.in/multimedia/dynamic/02284/FL06_NOAM_CHOMSKY_2284529g.jpg" alt="Noam Chomsky"></a>
+      </div>
+      <!--Bio-->
+      <div class="col-xs-8">
+          <p id="about">
+              <b>Noam Chomsky</b> (born Dec. 7, 1928, Philadelphia, Pa., U.S.), American theoretical linguist whose work from the 1950s revolutionized the field of <i>linguistics</i> by treating language as a uniquely human, biologically based cognitive capacity. Through his contributions to linguistics and related fields, including cognitive psychology and the philosophies of mind and language, Chomsky helped to initiate and sustain what came to be known as the <q>cognitive revolution</q>. Chomsky also gained a worldwide following as a political dissident for his analyses of the pernicious influence of economic elites on U.S. domestic politics, foreign policy, and intellectual culture.</p> 
+          <address>
+ source <a href="https://www.britannica.com/biography/Noam-Chomsky" target="_blank" style="color:black;"><em>Encyclopaedia Britannica</em></a>
+          </address>           
+      </div>
+  </div>
+</div>
+    
+<section id="content">
+<div class="container-fluid">
+  <div class="row">
+    <!--First quote-->  
+    <div class="col-m-4">
+      <p id="mainquote"><q>The basic idea which runs right through modern history and modern liberalism is that the public has got to be marginalized. The general public are viewed as no more than ignorant and meddlesome outsiders, a bewildered herd.</q></p><footer style="font-family:cursive;font-size:15px;margin:20px;">Noam Chomsky</footer>
+    </div>
+    <!--Second quote-->
+    <div class="col-m-4">
+      <p id="mainquote"><q>The responsibility of the writer as a moral agent is to try to bring the truth about matters of human significance to an audience that can do something about them.</q></p>
+            <footer style="font-family:cursive;font-size:15px;margin:20px;">Noam Chomsky wrote in <em>Powers and Prospects (1996)</em></footer>
+    </div>
+      <br><br>
+  </div>	
+</div>
+</section>
+    <!--Script leads to the workable items in the navigation bar-->
+<script type="text/javascript" charset="utf-8">
+			$(document).ready(function(){				
+				$('#MyNavBar ul li a').click(function(){
+					$('#content').load('details.html #' + $(this).attr('href'));
+					return false;
+				});    
+            });
+         
+</script>
+</body>
+</html>
